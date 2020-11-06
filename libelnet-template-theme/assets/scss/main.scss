@@ -1,0 +1,194 @@
+/* IMPORTS
+---------------------------------------------- */
+// Required - importing bootstrap scss files
+@import "..//bootstrap/scss/bootstrap-grid";
+
+// Eventuele font-imports komen hier
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+/* VARIABLES
+
+This template uses variables to reference colors, fonts, animations etc. To change the style of an element that has it's value given by a variable, please change the value here.
+---------------------------------------------- */
+
+// ----- COLORS -----
+// Main Colors - Used for coloring elements, buttons, outlines and backgrounds
+$mainColor : #000000;
+$secondaryColor : #000000;
+$accentcolor: #000000;
+
+// Standard colors - Used as blacks & whites or lights and darks for text or hovers
+// Darkened
+$mainColorD : darken($color: $mainColor, $amount: 10%);
+$secondaryColorD : darken($color: $secondaryColor, $amount: 10%); 
+$AccencolorD : darken($color: $accentcolor, $amount: 10%); 
+// Lightened
+$mainColorL : lighten($color: $mainColor, $amount: 5%);
+$secondaryColor : lighten($color: $secondaryColor, $amount: 5%);
+$accentcolorL : lighten($color: $accentcolor, $amount: 5%);
+
+// Darks - black-like used for e.g. text
+$mainDark : #000000;
+$secondaryDark: #000000;
+
+// Lights white-like used for e.g. text
+$mainLight : #ffffff;
+$secondaryLight : #ffffff;
+
+// Text colors - Standard colors for text, headings and links
+$headingColor-A : $mainDark;
+$headingColor-B : $mainLight;
+$subheadingColor : $secondaryDark;
+$paragraphColor-A : $mainDark;
+$paragraphColor-B : $mainLight;
+$linkColor : $accentcolor;
+$linkColorH : $AccencolorD;
+
+// ----- FONTS -----
+$mainHeading: sans-serif;
+$secondaryHeading: sans-serif;
+$paragraph: serif;
+
+// ----- ANIMATIONS / TRANSITION PRESET -----
+$standardOut : all 350ms ease-out;
+$standardIn : all 350ms ease-in;
+$fastOut : all 200ms ease-out;
+$fastIn : all 200ms ease-in;
+$slowOut : all 500ms ease-out;
+$slowIn : all 500ms ease-out;
+
+
+/* TYPOGRAPHY
+
+All the default versions of text will be defined here
+---------------------------------------------- */
+h1{
+    font-family: $mainHeading;
+}
+
+h2{
+    font-family: $mainHeading;
+}
+
+h3{
+    font-family: $mainHeading;
+}
+
+h4{
+    font-family: $paragraph;
+}
+
+p{
+    font-family: $paragraph;
+}
+
+a{
+    font-family: $paragraph;
+}
+
+li{
+    font-family: $paragraph;
+}
+
+
+/* BODY & MAIN
+
+All changes directly on body and main go here
+---------------------------------------------- */
+body, body>*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* HEADER
+
+Styling for elements within the header go here
+---------------------------------------------- */
+
+
+/* SHOWCASE/ LANDING-HERO
+
+Styling for a showcase or hero-section on the landing page goes here
+---------------------------------------------- */
+
+
+/* LANDING-PAGE
+
+Specific styling for the front/ landing page goes here (organized by section if possible)
+---------------------------------------------- */
+
+
+/* PAGE-CONTENT
+
+Styling for content on website pages, except the homepage goes here (organized by section if possible)
+---------------------------------------------- */
+
+
+/* BLOG-CONTENT
+
+Styling for blog posts and for blog-archives goes here (organized by section if possible)
+---------------------------------------------- */
+
+
+/* CUSTOM ELEMENTS
+
+All (site wide) custom elements' styling goes here
+---------------------------------------------- */
+
+
+/* FOOTER
+
+All styling for the footer goes here
+---------------------------------------------- */
+
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+    For the website template, building the site desktopfirst/ responsive is the default. Therefor the mixins used will use "media-breakpoint-down". If a site is to be build with a specific mobile design or mobile first, start working here and change the mixin to "media-breakpoint-up".
+*/
+
+// XS and smaller
+@include media-breakpoint-down(xs) {
+
+
+
+ }
+
+ // SM and smaller
+@include media-breakpoint-down(sm) {
+
+
+
+ }
+
+ // MD and smaller
+@include media-breakpoint-down(md) {
+
+
+
+ }
+
+ // LG and smaller
+@include media-breakpoint-down(lg) {
+
+
+
+}
+
+// XL and smaller
+@include media-breakpoint-down(xl) {
+
+
+
+ }
