@@ -2,9 +2,15 @@
 ---------------------------------------------- */
 // Required - importing bootstrap scss files
 @import "..//bootstrap/scss/bootstrap-grid";
+@import "..//bootstrap/scss/variables";
+@import "..//bootstrap/scss/mixins";
+@import"..//bootstrap/scss/carousel";
 
 // Eventuele font-imports komen hier
+// Open Sans
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+// Montserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap');
 
 /* VARIABLES
 
@@ -13,15 +19,19 @@ This template uses variables to reference colors, fonts, animations etc. To chan
 
 // ----- COLORS -----
 // Main Colors - Used for coloring elements, buttons, outlines and backgrounds
-$mainColor : #000000;
-$secondaryColor : #000000;
-$accentcolor: #000000;
+$mainColor : rgb(84, 132, 236);
+$secondaryColor : #281263;
+$accentcolor: #61c4ff;
+
+// Gradients - if used
+$mainGradient: linear-gradient(307deg, rgba(52, 16, 159, 1) 0%, rgba(45, 63, 253, 1) 100%);
+$mainGradientH: linear-gradient(307deg, rgb(42, 13, 128) 0%, rgb(36, 51, 214) 100%);
 
 // Standard colors - Used as blacks & whites or lights and darks for text or hovers
 // Darkened
 $mainColorD : darken($color: $mainColor, $amount: 10%);
-$secondaryColorD : darken($color: $secondaryColor, $amount: 10%); 
-$AccencolorD : darken($color: $accentcolor, $amount: 10%); 
+$secondaryColorD : darken($color: $secondaryColor, $amount: 10%);
+$AccencolorD : darken($color: $accentcolor, $amount: 10%);
 // Lightened
 $mainColorL : lighten($color: $mainColor, $amount: 5%);
 $secondaryColor : lighten($color: $secondaryColor, $amount: 5%);
@@ -29,7 +39,7 @@ $accentcolorL : lighten($color: $accentcolor, $amount: 5%);
 
 // Darks - black-like used for e.g. text
 $mainDark : #000000;
-$secondaryDark: #000000;
+$secondaryDark: #03081b;
 
 // Lights white-like used for e.g. text
 $mainLight : #ffffff;
@@ -45,9 +55,12 @@ $linkColor : $accentcolor;
 $linkColorH : $AccencolorD;
 
 // ----- FONTS -----
-$mainHeading: sans-serif;
-$secondaryHeading: sans-serif;
-$paragraph: serif;
+$mainHeading: 'Montserrat',
+sans-serif;
+$secondaryHeading: 'Open Sans',
+sans-serif;
+$paragraph: 'Open Sans',
+sans-serif;
 
 // ----- ANIMATIONS / TRANSITION PRESET -----
 $standardOut : all 350ms ease-out;
@@ -62,31 +75,34 @@ $slowIn : all 500ms ease-out;
 
 All the default versions of text will be defined here
 ---------------------------------------------- */
-h1{
+h1 {
+    font-family: $mainHeading;
+    font-weight: 800;
+}
+
+h2 {
     font-family: $mainHeading;
 }
 
-h2{
+h3 {
     font-family: $mainHeading;
 }
 
-h3{
-    font-family: $mainHeading;
-}
-
-h4{
+h4 {
     font-family: $paragraph;
 }
 
-p{
+p {
     font-family: $paragraph;
 }
 
-a{
+a {
     font-family: $paragraph;
+    color: lighten($color: $paragraphColor-A, $amount: 30%);
+    font-weight: 600;
 }
 
-li{
+li {
     font-family: $paragraph;
 }
 
@@ -95,34 +111,194 @@ li{
 
 All changes directly on body and main go here
 ---------------------------------------------- */
-body, body>*{
+body,
+body>* {
     margin: 0;
     padding: 0;
 }
 
-main{
-    margin: 0;
+main {
+    margin: 50px 0 0 0;
     padding: 0;
+    min-height: 60vh;
 }
 
+
+/* CONTAINERS
+
+Sizing of containers
+----------------------.------------------------ */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px 0 15px;
+}
 
 /* HEADER
 
 Styling for elements within the header go here
 ---------------------------------------------- */
+header {
+    height: 90px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
 
+    .container {
+        height: 100%;
+
+        .row {
+            height: 100%;
+        }
+    }
+
+    .logo-container {
+        max-height: 100%;
+
+        img {
+            max-width: 100%;
+            max-height: 65px;
+            object-fit: contain;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        margin-top: 7.5px;
+        margin: 10px 5px 0px 5px;
+        transition: $standardIn;
+
+        &:hover {
+            color: $linkColorH !important;
+        }
+    }
+
+    .btn-cta {
+        float: right;
+    }
+
+    .navbar-toggler-icon {
+        i {
+            font-size: 30px;
+            color: lighten($color: $paragraphColor-A, $amount: 25%);
+        }
+    }
+
+    .nav-logo-container {
+        width: 40%;
+        margin: auto;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .collapsing {
+        // <-- Remove the default bootstrap animation for the mobile
+        -webkit-transition: none;
+        transition: none;
+        display: none;
+    }
+
+}
 
 /* SHOWCASE/ LANDING-HERO
 
 Styling for a showcase or hero-section on the landing page goes here
 ---------------------------------------------- */
+.showcase {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("../images/placeholder-banner.jpg");
+    background-size: cover;
+    background-position: center center;
 
+    .container {
+        margin-top: -25px;
+    }
+
+    .t-btn {
+        margin: 10px 15px 0px 0px;
+        padding: 10px 25px;
+
+        a {
+            color: white;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    h1 {
+        color: $paragraphColor-B;
+    }
+
+    p {
+        color: $paragraphColor-B;
+        font-weight: 600;
+    }
+}
 
 /* LANDING-PAGE
 
 Specific styling for the front/ landing page goes here (organized by section if possible)
 ---------------------------------------------- */
+.usp-container {
+    background: white;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    padding: 30px 0;
+    position: relative;
+    border-radius: 10px;
 
+    h4 {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .textwidget {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            padding: 0;
+            text-align: left;
+            list-style: none;
+
+            i{
+                margin-right: 10px;
+                background: $mainGradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .t-btn {
+            display: inline-block;
+            width: auto;
+            color: white;
+            background: $mainGradient;
+            padding: 7.5px 35px;
+
+            &:hover{
+            background: $mainGradientH;
+            box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+
+
+}
 
 /* PAGE-CONTENT
 
@@ -134,18 +310,173 @@ Styling for content on website pages, except the homepage goes here (organized b
 
 Styling for blog posts and for blog-archives goes here (organized by section if possible)
 ---------------------------------------------- */
+.blog-container{
+    .post{
+    margin: 15px 0;
+    
+    .post-container
+    {
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+
+        width: 95%;
+        margin: auto;
+        .thumbnail-container{
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .card-content-container{
+            width: 90%;
+            margin: auto;
+            flex-direction: column;
+            padding: 20px 0px;
+
+            h3{
+                font-size: 23px;
+                font-weight: 600;
+            }
+
+            button{
+                a{
+                    color: white;
+                    display: inline-block;
+                    width: 100%;
+
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+}
 
 
 /* CUSTOM ELEMENTS
 
 All (site wide) custom elements' styling goes here
 ---------------------------------------------- */
+// Default buttons
+.t-btn {
+    display: inline-block;
+    width: auto;
+    padding: 7.5px 20px;
+    background: $mainColor;
+    color: $paragraphColor-B;
+    transition: $fastOut;
+    border: none;
+
+    a{
+        color: white;
+    }
+
+    &:hover {
+        color: $paragraphColor-B !important;
+        text-decoration: none;
+        background: darken($color: $mainColor, $amount: 10%);
+
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.t-btn-primary {
+    background: $mainGradient;
+    padding: 15px 20px !important;
+
+    &:hover {
+        background: $mainGradientH;
+        box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.t-btn-secondary {
+    background: none;
+    border: solid 2px white;
+    padding: 13px 18px !important;
+
+    &:hover {
+        background: white;
+
+        a {
+            color: $paragraphColor-A !important;
+        }
+
+    }
+}
+
+.btn-cta {
+    background: $mainGradient;
+    &:hover {
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+        transform: scale(1.030);
+    }
+}
 
 
 /* FOOTER
 
 All styling for the footer goes here
 ---------------------------------------------- */
+// TEMPLATE FOOTER - START
+footer {
+    background: $secondaryDark;
+    padding: 40px 0;
+    margin-top: 50px;
+
+    h4 {
+        font-family: $mainHeading;
+        font-size: 18px;
+        color: white;
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            color: darken($color: $paragraphColor-B, $amount: 25%);
+
+            a {
+                color: darken($color: $paragraphColor-B, $amount: 25%);
+
+                &:hover {
+                    color: darken($color: $paragraphColor-B, $amount: 35%);
+                }
+            }
+        }
+    }
+
+    .socials-container {
+        text-align: center;
+
+        a {
+            font-size: 30px;
+            margin: 15px;
+
+            i {
+                color: darken($color: $paragraphColor-B, $amount: 25%);
+            }
+
+            &:hover {
+                i {
+                    color: $accentcolor;
+                }
+            }
+        }
+    }
+
+    .footer-right {
+        text-align: right;
+    }
+}
+
+// TEMPLATE FOOTER - END
 
 
 /*
@@ -159,36 +490,58 @@ M E D I A  Q U E R I E S
 */
 
 // XS and smaller
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(xs) {}
 
-
-
- }
-
- // SM and smaller
+// SM and smaller
 @include media-breakpoint-down(sm) {
 
+    // TEMPLATE FOOTER - START
+    footer {
+        ul {
+            li {
+                text-align: center !important;
+            }
+        }
 
+        h4 {
+            text-align: center !important;
+        }
+    }
 
- }
-
- // MD and smaller
-@include media-breakpoint-down(md) {
-
-
-
- }
-
- // LG and smaller
-@include media-breakpoint-down(lg) {
+    // TEMPLATE FOOTER - END
 
 
 
 }
 
+// MD and smaller
+@include media-breakpoint-down(md) {
+
+    // TEMPLATE MOBILE NAV - START
+    #basicExampleNav {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        background: white;
+        top: 0;
+        left: 0;
+        text-align: center;
+        padding-top: 150px;
+    }
+
+    .navbar-toggler {
+        z-index: 1001;
+        position: relative;
+    }
+
+    // TEMPLATE MOBILE NAV - END
+
+
+}
+
+// LG and smaller
+@include media-breakpoint-down(lg) {}
+
 // XL and smaller
-@include media-breakpoint-down(xl) {
-
-
-
- }
+@include media-breakpoint-down(xl) {}

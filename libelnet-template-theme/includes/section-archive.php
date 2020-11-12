@@ -1,28 +1,21 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-
-<h2>Het laatste nieuws</h2>
-<div class="blogpost-container">
-
-    <div class="blogpost">
-
-        <div class="blogpost-body">
-
-            <?php if(has_post_thumbnail()):?>
-
-                <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('blog-small');?>" alt="<?php the_title();?>" class="img-fluid mb-3 img-thumbnail"></a>
-
-            <?php endif;?>
-
-            <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-            <?php //the_excerpt();?>
-            <p><i><?php echo get_the_date('D j F Y');?></i></p>
-
-            <a href="<?php the_permalink();?>">Lees meer</a>
+    <div class="col-12 col-sm-6 col-lg-4 post">
+        <div class="post-container">
+            <div class="thumbnail-container">
+                <?php the_post_thumbnail(); ?>
+            </div>
+            <div class="card-content-container row">
+                <h3><?php the_title(); ?></h3>
+                <button class="t-btn">
+                    <a href="<?php echo the_permalink(); ?>">Lees meer</a>
+                </button>
+            </div>
+            
         </div>
 
     </div>
 
-    <?php endwhile; else: endif; ?>
+<?php endwhile; else: endif; ?>
 
 </div>

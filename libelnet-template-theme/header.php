@@ -13,18 +13,20 @@
 <body <?php body_class(); ?>>
 
 <header id="header-primary">
-
-    <div class="row">
+    <div class="container">
+    <div class="row justify-content-space-between align-items-center">
 
         <!-- LOGO -->
-        <div class="col logo-container">
-            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" class="logo navbar-brand" alt=""> </a>
+        <div class="col-10 col-lg-2">
+            <div class="logo-container">
+                <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" class="logo navbar-brand" alt=""> </a>
+            </div>
         </div>
 
         <!-- DESKTOP MENU -->
-        <div class="d-none d-lg-block col">
+        <div class="d-none d-lg-block col-lg-7">
             <nav class="navbar hoofdmenu navbar-expand-lg" role=""navigation">
-            <div class="collapse navbar-collapse justify-content-center" id="basicExampleNav">
+            <div class="collapse navbar-collapse justify-content-start">
                 <?php
                 wp_nav_menu( array(
                     'theme_location'    => 'hoofdmenu',
@@ -40,15 +42,36 @@
             </div>
             </nav>
         </div>
-    </div>
+        <div class="d-none d-lg-block col-3">
+            <a class="t-btn btn-cta" href="#">Call to Action!</a>
+        </div>
 
     <!-- MOBILE MENU TOGGLE -->
-    <div class="d-block d-lg-none col">
+    <div class="d-block d-lg-none col-2">
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation" onclick="ToggleMenuIcon(this)">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
         </button>
     </div>
+    </div>
 
+    <!-- MOBILE NAV -->
+    <div class="collapse navbar-collapse justify-content-end" id="basicExampleNav">
+        <div class="nav-logo-container">
+            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" class="logo navbar-brand" alt=""> </a>
+        </div>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'    => 'hoofdmenu',
+                    'depth'             => '2',
+                    'container'         => 'ul',
+                    //'container_id'    => 'basicExampleNav',
+                    //'container_class' => 'collapse navbar-collapse',
+                    'menu_class'        => 'navbar-nav',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker(),
+                ));
+                ?>
+            </div>
 </header>
