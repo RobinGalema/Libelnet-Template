@@ -3088,26 +3088,40 @@ html {
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
+  color: #0e0e0e;
 }
 h2 {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #0e0e0e;
 }
 h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: #0e0e0e;
 }
 h4 {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #0e0e0e;
 }
 p {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #0e0e0e;
 }
 a {
   font-family: 'Open Sans', sans-serif;
-  color: #4d4d4d;
-  font-weight: 600;
+  font-weight: normal;
+  color: #363636;
+}
+a:hover {
+  color: #000;
 }
 li {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #0e0e0e;
 }
 /* BODY & MAIN
  All changes directly on body and main go here
@@ -3117,9 +3131,7 @@ body, body > * {
   padding: 0;
 }
 main {
-  margin: 50px 0 0 0;
   padding: 0;
-  min-height: 60vh;
 }
 /* CONTAINERS
  Sizing of containers
@@ -3129,13 +3141,6 @@ main {
  ---------------------------------------------- */
 header {
   height: 90px;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
-}
-header .container {
-  height: 100%;
-}
-header .container .row {
-  height: 100%;
 }
 header .logo-container {
   max-height: 100%;
@@ -3144,22 +3149,6 @@ header .logo-container img {
   max-width: 100%;
   max-height: 65px;
   object-fit: contain;
-}
-header a {
-  font-size: 16px;
-  margin-top: 7.5px;
-  margin: 10px 5px 0px 5px;
-  transition: all 350ms ease-in;
-}
-header a:hover {
-  color: #2eb1ff !important;
-}
-header .btn-cta {
-  float: right;
-}
-header .navbar-toggler-icon i {
-  font-size: 30px;
-  color: #404040;
 }
 header .nav-logo-container {
   width: 40%;
@@ -3177,6 +3166,10 @@ header .collapsing {
 /* SHOWCASE/ LANDING-HERO
  Styling for a showcase or hero-section on the landing page goes here
  ---------------------------------------------- */
+#showcase {
+  height: 50vh;
+  background: darkgray;
+}
 /* LANDING-PAGE
  Specific styling for the front/ landing page goes here (organized by section if possible)
  ---------------------------------------------- */

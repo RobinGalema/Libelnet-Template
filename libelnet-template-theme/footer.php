@@ -1,21 +1,20 @@
 <footer class="footer-primary">
-
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-11 col-md-4">
-            </div>
-            <div class="col-11 col-md-4">
-            </div>
-            <div class="col-11 col-md-4">
+    <section id="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 </footer>
 
 <?php wp_footer();?>
 
 </body>
+
 </html>

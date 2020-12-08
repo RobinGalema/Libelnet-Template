@@ -1,0 +1,88 @@
+/* VARIABLES
+
+This template uses variables to reference colors, fonts, animations etc. To change the style of an element that has it's value given by a variable, please change the value here.
+---------------------------------------------- */
+
+
+// Eventuele font-imports komen hier
+// Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+// Montserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap');
+
+
+// ----- COLORS -----
+// Main Colors - Used for coloring elements, buttons, outlines and backgrounds
+$colorA : rgb(84, 132, 236);
+$colorB : #281263;
+$colorC: #61c4ff;
+$colorD: #fff;
+
+// ----- FONTS -----
+$HeadingA: 'Montserrat',
+sans-serif;
+$HeadingB: 'Open Sans',
+sans-serif;
+$paragraph: 'Open Sans',
+sans-serif;
+
+// ----- ANIMATIONS / TRANSITION PRESET -----
+$standardOut : all 350ms ease-out;
+$standardIn : all 350ms ease-in;
+$fastOut : all 200ms ease-out;
+$fastIn : all 200ms ease-in;
+$slowOut : all 500ms ease-out;
+$slowIn : all 500ms ease-out;
+
+
+/* TYPOGRAPHY
+
+All the default versions of text will be defined here
+---------------------------------------------- */
+h1 {
+    font-family: $HeadingA;
+    font-weight: 800;
+    color: rgb(14, 14, 14);
+}
+
+h2 {
+    font-family: $HeadingA;
+    font-weight: 600;
+    color: rgb(14, 14, 14);
+}
+
+h3 {
+    font-family: $paragraph;
+    font-weight: 500;
+    color: rgb(14, 14, 14);
+}
+
+h4 {
+    font-family: $paragraph;
+    font-weight: normal;
+    color: rgb(14, 14, 14);
+}
+
+p {
+    font-family: $paragraph;
+    font-weight: normal;
+    color: rgb(14, 14, 14);
+}
+
+a {
+    font-family: $paragraph;
+    font-weight: normal;
+    color: rgb(54, 54, 54);
+
+    &:hover{
+        color: darken($color: rgb(54, 54, 54), $amount: 50%);
+    }
+}
+
+li {
+    font-family: $paragraph;
+    font-weight: normal;
+    color: rgb(14, 14, 14);
+}
+
+

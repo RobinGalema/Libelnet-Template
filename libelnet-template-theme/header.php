@@ -24,9 +24,9 @@
         </div>
 
         <!-- DESKTOP MENU -->
-        <div class="d-none d-lg-block col-lg-7">
+        <div class="d-none d-lg-block col-lg-10">
             <nav class="navbar hoofdmenu navbar-expand-lg" role=""navigation">
-            <div class="collapse navbar-collapse justify-content-start">
+            <div class="collapse navbar-collapse justify-content-between">
                 <?php
                 wp_nav_menu( array(
                     'theme_location'    => 'hoofdmenu',
@@ -41,9 +41,6 @@
                 ?>
             </div>
             </nav>
-        </div>
-        <div class="d-none d-lg-block col-3">
-            <a class="t-btn btn-cta" href="#">Call to Action!</a>
         </div>
 
     <!-- MOBILE MENU TOGGLE -->
