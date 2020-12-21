@@ -34,35 +34,59 @@ Sizing of containers
 
 Styling for elements within the header go here
 ---------------------------------------------- */
-header {
-    height: 90px;
+header#default-header {
+    height: 95px;
+    background: darken($color: white, $amount: 3%);
 
-    .logo-container {
-        max-height: 100%;
+    a {
+        color: lighten($color: black, $amount: 25%);
+        font-weight: 500;
+        font-family: $HeadingA;
 
-        img {
-            max-width: 100%;
-            max-height: 65px;
-            object-fit: contain;
+        &:hover{
+            color: lighten($color: black, $amount: 35%);
         }
     }
 
-    .nav-logo-container {
-        width: 40%;
-        margin: auto;
 
-        img {
-            max-width: 100%;
-            height: auto;
+    .container {
+        max-width: 1720px;
+        padding: 0 25px;
+        height: 100%;
+    }
+
+    .branding-container {
+        img{
+            padding: 15px 0;
+            max-height: 100%;
         }
     }
 
-    .collapsing { // <-- Remove the default bootstrap animation for the mobile
-        -webkit-transition: none;
-        transition: none;
-        display: none;
+    nav {
+        justify-content: flex-end;
+
+        button {
+            padding-right: 0;
+            z-index: 10000;
+
+            i {
+                font-size: 30px;
+                color: lighten($color: black, $amount: 25%);
+            }
+        }
+    }
+
+    .icon-container {
+        a {
+            i {
+                font-size: 30px;
+                text-align: right;
+                float: right;
+            }
+        }
     }
 }
+
 
 /* SHOWCASE/ LANDING-HERO
 
@@ -132,36 +156,74 @@ M E D I A  Q U E R I E S
 
 // MD and smaller
 @include media-breakpoint-down(md) {
+    header#default-header {
 
-    // TEMPLATE MOBILE NAV - START
-    #basicExampleNav {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        z-index: 1000;
-        background: white;
-        top: 0;
-        left: 0;
-        text-align: center;
-        padding-top: 150px;
+        #basicExampleNav {
+            position: fixed;
+            display: block !important;
+            width: 100vw;
+            height: 100vh;
+            top: -110vh;
+            left: 0;
+            background: darken($color: white, $amount: 3%);
+            z-index: 100;
+            transition: $standardOut;
+
+            #menu-hoofdmenu {
+                text-align: center;
+                width: 50%;
+                margin: auto;
+                height: 100%;
+                justify-content: center;
+
+                li {
+                    margin: 10px 0;
+
+                    &:hover {
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        .dropdown-menu {
+            background: none;
+            border: none;
+            text-align: center;
+            padding-top: 0;
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            transition: $standardOut;
+
+            li{
+                transition: $standardOut;
+            }
+        }
+
+        .dropdown-menu.show{
+            max-height: 500px;
+        }
+
+        #basicExampleNav.show,
+        #basicExampleNav.collapsing {
+            top: 0;
+        }
+
+        .collapsing {
+            -webkit-transition: none;
+            transition: none;
+            display: none;
+        }
     }
-
-    .navbar-toggler {
-        z-index: 1001;
-        position: relative;
-    }
-
-    // TEMPLATE MOBILE NAV - END
-
-
 }
 
 // LG and smaller
 @include media-breakpoint-down(lg) {
-
+   
 }
 
 // XL and smaller
 @include media-breakpoint-down(xl) {
-
+    
 }

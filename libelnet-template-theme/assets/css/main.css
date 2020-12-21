@@ -3139,29 +3139,42 @@ main {
 /* HEADER
  Styling for elements within the header go here
  ---------------------------------------------- */
-header {
-  height: 90px;
+header#default-header {
+  height: 95px;
+  background: #f7f7f7;
 }
-header .logo-container {
+header#default-header a {
+  color: #404040;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+header#default-header a:hover {
+  color: #595959;
+}
+header#default-header .container {
+  max-width: 1720px;
+  padding: 0 25px;
+  height: 100%;
+}
+header#default-header .branding-container img {
+  padding: 15px 0;
   max-height: 100%;
 }
-header .logo-container img {
-  max-width: 100%;
-  max-height: 65px;
-  object-fit: contain;
+header#default-header nav {
+  justify-content: flex-end;
 }
-header .nav-logo-container {
-  width: 40%;
-  margin: auto;
+header#default-header nav button {
+  padding-right: 0;
+  z-index: 10000;
 }
-header .nav-logo-container img {
-  max-width: 100%;
-  height: auto;
+header#default-header nav button i {
+  font-size: 30px;
+  color: #404040;
 }
-header .collapsing {
-  -webkit-transition: none;
-  transition: none;
-  display: none;
+header#default-header .icon-container a i {
+  font-size: 30px;
+  text-align: right;
+  float: right;
 }
 /* SHOWCASE/ LANDING-HERO
  Styling for a showcase or hero-section on the landing page goes here
@@ -3198,20 +3211,53 @@ header .collapsing {
 @media (max-width: 767.98px) {
 }
 @media (max-width: 991.98px) {
-  #basicExampleNav {
-    position: absolute;
-    width: 100%;
+  header#default-header #basicExampleNav {
+    position: fixed;
+    display: block !important;
+    width: 100vw;
     height: 100vh;
-    z-index: 1000;
-    background: white;
-    top: 0;
+    top: -110vh;
     left: 0;
-    text-align: center;
-    padding-top: 150px;
+    background: #f7f7f7;
+    z-index: 100;
+    transition: all 350ms ease-out;
   }
-  .navbar-toggler {
-    z-index: 1001;
-    position: relative;
+  header#default-header #basicExampleNav #menu-hoofdmenu {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    justify-content: center;
+  }
+  header#default-header #basicExampleNav #menu-hoofdmenu li {
+    margin: 10px 0;
+  }
+  header#default-header #basicExampleNav #menu-hoofdmenu li:hover {
+    border: none;
+  }
+  header#default-header .dropdown-menu {
+    background: none;
+    border: none;
+    text-align: center;
+    padding-top: 0;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 350ms ease-out;
+  }
+  header#default-header .dropdown-menu li {
+    transition: all 350ms ease-out;
+  }
+  header#default-header .dropdown-menu.show {
+    max-height: 500px;
+  }
+  header#default-header #basicExampleNav.show, header#default-header #basicExampleNav.collapsing {
+    top: 0;
+  }
+  header#default-header .collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
   }
 }
 @media (max-width: 1199.98px) {
