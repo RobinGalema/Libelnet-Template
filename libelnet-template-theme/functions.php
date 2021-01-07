@@ -7,9 +7,6 @@
 
 
 // load stylesheets
-
-
-
 function load_css()
 {
     wp_register_style('main', get_template_directory_uri() . '/assets/scss/main.scss',
@@ -26,8 +23,7 @@ function load_css()
 add_action('wp_enqueue_scripts','load_css', 1);
 
 
-//load javascripts
-
+//load javascript
 function load_js()
 {
     wp_enqueue_script('jquery');

@@ -2,26 +2,17 @@
 //  DOCUMENT ON READY (REPLACES WINDOW.ONLOAD), ACCES JQUERY WITH '$'
 // ==========================================================
 jQuery(document).ready(function( $ ) {
+    // Theme functions
+    PreventDropDownClosing();
+
+    // Own Javascript
 
 });
 
 
-
 // ==========================================================
-//  CUSTOM JAVASCRIPT GOES HERE
+//  THEME RELATED JAVASCRIPT
 // ==========================================================
-
-// Place all functions using jQuery inside this function to allow the use of '$' instead of 'jQuery';
-(function($){  // use $ insde here
-
-// jQuery code
-// Prevent closing from click inside dropdown
-$(document).on('click', '.dropdown-menu', function (e) {
-    e.stopPropagation();
-  }); 
-
-})(jQuery);
-
 
 /**
  * Function that toggles the font awesome icon of the mobile nav
@@ -35,3 +26,16 @@ const toggleNavIcon = (element) => {
     
 }
 
+/**
+ * Function that prevents dropdowns from closing when clicking inside them
+ */
+const PreventDropDownClosing = () =>{
+    jQuery(document).on('click', '.dropdown-menu', function (e) {
+        e.stopPropagation();
+      });
+}
+
+
+// ==========================================================
+//  CUSTOM JAVASCRIPT GOES HERE
+// ==========================================================

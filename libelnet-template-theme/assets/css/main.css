@@ -3206,9 +3206,7 @@ header#default-header .icon-container a i {
 /*
  For the website template, building the site desktopfirst/ responsive is the default. Therefor the mixins used will use "media-breakpoint-down". If a site is to be build with a specific mobile design or mobile first, start working here and change the mixin to "media-breakpoint-up".
  */
-@media (max-width: 575.98px) {
-}
-@media (max-width: 767.98px) {
+@media (max-width: 1199.98px) {
 }
 @media (max-width: 991.98px) {
   header#default-header #basicExampleNav {
@@ -3260,5 +3258,7 @@ header#default-header .icon-container a i {
     display: none;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 767.98px) {
+}
+@media (max-width: 575.98px) {
 }

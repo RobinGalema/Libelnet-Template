@@ -36,8 +36,6 @@
                     'theme_location'    => 'hoofdmenu',
                     'depth'             => '2',
                     'container'         => 'ul',
-                    //'container_id'    => 'basicExampleNav',
-                    //'container_class' => 'collapse navbar-collapse',
                     'menu_class'        => 'navbar-nav',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker(),
