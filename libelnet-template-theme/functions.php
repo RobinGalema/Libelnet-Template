@@ -46,7 +46,6 @@ add_theme_support('post-thumbnails');
 
 
 // menus
-
 register_nav_menus(
 
     array(
@@ -64,9 +63,7 @@ function register_navwalker(){
 add_action( 'after_setup_theme', 'register_navwalker' );
 
 
-
 // sidebars registreren
-
 function my_sidebars()
 {
 

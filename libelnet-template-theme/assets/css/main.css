@@ -3082,8 +3082,7 @@ html {
 /* VARIABLES
  This template uses variables to reference colors, fonts, animations etc. To change the style of an element that has it's value given by a variable, please change the value here.
  ---------------------------------------------- */
-/* TYPOGRAPHY
- All the default versions of text will be defined here
+/*All the default versions of text will be defined here
  ---------------------------------------------- */
 h1 {
   font-family: 'Montserrat', sans-serif;
@@ -3113,10 +3112,10 @@ p {
 a {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  color: #363636;
+  color: #5484ec;
 }
 a:hover {
-  color: #000;
+  color: #2663e7;
 }
 li {
   font-family: 'Open Sans', sans-serif;
@@ -3132,6 +3131,7 @@ body, body > * {
 }
 main {
   padding: 0;
+  margin: 50px 0;
 }
 /* CONTAINERS
  Sizing of containers

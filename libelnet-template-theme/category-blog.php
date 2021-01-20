@@ -2,7 +2,7 @@
 
 
 <main id="main-primary">
-    <section id="">
+    <section id="category-blog">
         <div class="container">
             <div class="blog-container row">
                 <?php get_template_part('includes/section','archive');?>

@@ -15,14 +15,14 @@
 <header id="default-header">
     <div class="container">
         <div class="row align-items-center h-100">
-            <div class="col-8 col-lg-4 col-xl-2 h-100">
+            <div class="col-8 col-lg-4 col-xl-3 h-100">
                 <div class="branding-container h-100">
                     <a href="<?php echo home_url();?>">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/logo.png" alt="Company Logo">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/logo_placeholder.png" alt="Company Logo">
                     </a>
                 </div>
             </div>
-            <div class="col-3 col-lg-7 col-xl-9 main-menu">
+            <div class="col-4 col-lg-8 col-xl-9 main-menu">
             <nav class="navbar hoofdmenu navbar-expand-lg" role="" navigation">
                     <button onclick="toggleNavIcon(this)" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                         aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,11 +44,6 @@
                             <!-- Collapsible content -->
                         </div>
                     </nav>
-            </div>
-            <div class="col-1">
-                <div class="icon-container">
-                    <a href="#"><i class="fas fa-info-circle"></i></a>
-                </div>
             </div>
         </div>
     </div>
