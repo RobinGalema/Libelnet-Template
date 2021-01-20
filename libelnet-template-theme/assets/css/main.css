@@ -3082,32 +3082,45 @@ html {
 /* VARIABLES
  This template uses variables to reference colors, fonts, animations etc. To change the style of an element that has it's value given by a variable, please change the value here.
  ---------------------------------------------- */
-/* TYPOGRAPHY
- All the default versions of text will be defined here
+/*All the default versions of text will be defined here
  ---------------------------------------------- */
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
+  color: #0e0e0e;
 }
 h2 {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #0e0e0e;
 }
 h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: #0e0e0e;
 }
 h4 {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #0e0e0e;
 }
 p {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #0e0e0e;
 }
 a {
   font-family: 'Open Sans', sans-serif;
-  color: #4d4d4d;
-  font-weight: 600;
+  font-weight: normal;
+  color: #5484ec;
+}
+a:hover {
+  color: #2663e7;
 }
 li {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #0e0e0e;
 }
 /* BODY & MAIN
  All changes directly on body and main go here
@@ -3117,276 +3130,74 @@ body, body > * {
   padding: 0;
 }
 main {
-  margin: 50px 0 0 0;
   padding: 0;
-  min-height: 60vh;
+  margin: 50px 0;
 }
 /* CONTAINERS
  Sizing of containers
  ----------------------.------------------------ */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 15px 0 15px;
-}
 /* HEADER
  Styling for elements within the header go here
  ---------------------------------------------- */
-header {
-  height: 90px;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+header#default-header {
+  height: 95px;
+  background: #f7f7f7;
 }
-header .container {
+header#default-header a {
+  color: #404040;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+header#default-header a:hover {
+  color: #595959;
+}
+header#default-header .container {
+  max-width: 1720px;
+  padding: 0 25px;
   height: 100%;
 }
-header .container .row {
-  height: 100%;
-}
-header .logo-container {
+header#default-header .branding-container img {
+  padding: 15px 0;
   max-height: 100%;
 }
-header .logo-container img {
-  max-width: 100%;
-  max-height: 65px;
-  object-fit: contain;
+header#default-header nav {
+  justify-content: flex-end;
 }
-header a {
-  font-size: 16px;
-  margin-top: 7.5px;
-  margin: 10px 5px 0px 5px;
-  transition: all 350ms ease-in;
+header#default-header nav button {
+  padding-right: 0;
+  z-index: 10000;
 }
-header a:hover {
-  color: #2eb1ff !important;
-}
-header .btn-cta {
-  float: right;
-}
-header .navbar-toggler-icon i {
+header#default-header nav button i {
   font-size: 30px;
   color: #404040;
 }
-header .nav-logo-container {
-  width: 40%;
-  margin: auto;
-}
-header .nav-logo-container img {
-  max-width: 100%;
-  height: auto;
-}
-header .collapsing {
-  -webkit-transition: none;
-  transition: none;
-  display: none;
+header#default-header .icon-container a i {
+  font-size: 30px;
+  text-align: right;
+  float: right;
 }
 /* SHOWCASE/ LANDING-HERO
  Styling for a showcase or hero-section on the landing page goes here
  ---------------------------------------------- */
-.showcase {
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("../images/placeholder-banner.jpg");
-  background-size: cover;
-  background-position: center center;
-}
-.showcase .container {
-  margin-top: -25px;
-}
-.showcase .t-btn {
-  margin: 10px 15px 0px 0px;
-  padding: 10px 25px;
-}
-.showcase .t-btn a {
-  color: white;
-}
-.showcase .t-btn a:hover {
-  text-decoration: none;
-}
-.showcase img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.showcase h1 {
-  color: #fff;
-}
-.showcase p {
-  color: #fff;
-  font-weight: 600;
+#showcase {
+  height: 50vh;
+  background: darkgray;
 }
 /* LANDING-PAGE
  Specific styling for the front/ landing page goes here (organized by section if possible)
  ---------------------------------------------- */
-.usp-container {
-  background: white;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-  padding: 30px 0;
-  position: relative;
-  border-radius: 10px;
-}
-.usp-container h4 {
-  text-align: center;
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-.usp-container .textwidget {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.usp-container .textwidget ul {
-  padding: 0;
-  text-align: left;
-  list-style: none;
-}
-.usp-container .textwidget ul i {
-  margin-right: 10px;
-  background: linear-gradient(307deg, rgba(52, 16, 159, 1) 0%, rgba(45, 63, 253, 1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.usp-container .textwidget .t-btn {
-  display: inline-block;
-  width: auto;
-  color: white;
-  background: linear-gradient(307deg, rgba(52, 16, 159, 1) 0%, rgba(45, 63, 253, 1) 100%);
-  padding: 7.5px 35px;
-}
-.usp-container .textwidget .t-btn:hover {
-  background: linear-gradient(307deg, #2a0d80 0%, #2433d6 100%);
-  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.4);
-}
 /* PAGE-CONTENT
  Styling for content on website pages, except the homepage goes here (organized by section if possible)
  ---------------------------------------------- */
 /* BLOG-CONTENT
  Styling for blog posts and for blog-archives goes here (organized by section if possible)
  ---------------------------------------------- */
-.blog-container .post {
-  margin: 15px 0;
-}
-.blog-container .post .post-container {
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
-  width: 95%;
-  margin: auto;
-}
-.blog-container .post .post-container .thumbnail-container img {
-  max-width: 100%;
-  height: auto;
-}
-.blog-container .post .post-container .card-content-container {
-  width: 90%;
-  margin: auto;
-  flex-direction: column;
-  padding: 20px 0px;
-}
-.blog-container .post .post-container .card-content-container h3 {
-  font-size: 23px;
-  font-weight: 600;
-}
-.blog-container .post .post-container .card-content-container button a {
-  color: white;
-  display: inline-block;
-  width: 100%;
-}
-.blog-container .post .post-container .card-content-container button a:hover {
-  text-decoration: none;
-}
 /* CUSTOM ELEMENTS
  All (site wide) custom elements' styling goes here
  ---------------------------------------------- */
-.t-btn {
-  display: inline-block;
-  width: auto;
-  padding: 7.5px 20px;
-  background: #5484ec;
-  color: #fff;
-  transition: all 200ms ease-out;
-  border: none;
-}
-.t-btn a {
-  color: white;
-}
-.t-btn:hover {
-  color: #fff !important;
-  text-decoration: none;
-  background: #2663e7;
-}
-.t-btn:hover a {
-  text-decoration: none;
-}
-.t-btn-primary {
-  background: linear-gradient(307deg, rgba(52, 16, 159, 1) 0%, rgba(45, 63, 253, 1) 100%);
-  padding: 15px 20px !important;
-}
-.t-btn-primary:hover {
-  background: linear-gradient(307deg, #2a0d80 0%, #2433d6 100%);
-  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.4);
-}
-.t-btn-secondary {
-  background: none;
-  border: solid 2px white;
-  padding: 13px 18px !important;
-}
-.t-btn-secondary:hover {
-  background: white;
-}
-.t-btn-secondary:hover a {
-  color: #000 !important;
-}
-.btn-cta {
-  background: linear-gradient(307deg, rgba(52, 16, 159, 1) 0%, rgba(45, 63, 253, 1) 100%);
-}
-.btn-cta:hover {
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
-  transform: scale(1.03);
-}
 /* FOOTER
  All styling for the footer goes here
  ---------------------------------------------- */
-footer {
-  background: #03081b;
-  padding: 40px 0;
-  margin-top: 50px;
-}
-footer h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  color: white;
-  font-weight: 600;
-}
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-footer ul li {
-  color: #bfbfbf;
-}
-footer ul li a {
-  color: #bfbfbf;
-}
-footer ul li a:hover {
-  color: #a6a6a6;
-}
-footer .socials-container {
-  text-align: center;
-}
-footer .socials-container a {
-  font-size: 30px;
-  margin: 15px;
-}
-footer .socials-container a i {
-  color: #bfbfbf;
-}
-footer .socials-container a:hover i {
-  color: #61c4ff;
-}
-footer .footer-right {
-  text-align: right;
-}
 /*
  ####################################################
  M E D I A  Q U E R I E S
@@ -3395,32 +3206,59 @@ footer .footer-right {
 /*
  For the website template, building the site desktopfirst/ responsive is the default. Therefor the mixins used will use "media-breakpoint-down". If a site is to be build with a specific mobile design or mobile first, start working here and change the mixin to "media-breakpoint-up".
  */
-@media (max-width: 575.98px) {
-}
-@media (max-width: 767.98px) {
-  footer ul li {
-    text-align: center !important;
-  }
-  footer h4 {
-    text-align: center !important;
-  }
+@media (max-width: 1199.98px) {
 }
 @media (max-width: 991.98px) {
-  #basicExampleNav {
-    position: absolute;
-    width: 100%;
+  header#default-header #basicExampleNav {
+    position: fixed;
+    display: block !important;
+    width: 100vw;
     height: 100vh;
-    z-index: 1000;
-    background: white;
-    top: 0;
+    top: -110vh;
     left: 0;
-    text-align: center;
-    padding-top: 150px;
+    background: #f7f7f7;
+    z-index: 100;
+    transition: all 350ms ease-out;
   }
-  .navbar-toggler {
-    z-index: 1001;
-    position: relative;
+  header#default-header #basicExampleNav #menu-hoofdmenu {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    justify-content: center;
+  }
+  header#default-header #basicExampleNav #menu-hoofdmenu li {
+    margin: 10px 0;
+  }
+  header#default-header #basicExampleNav #menu-hoofdmenu li:hover {
+    border: none;
+  }
+  header#default-header .dropdown-menu {
+    background: none;
+    border: none;
+    text-align: center;
+    padding-top: 0;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 350ms ease-out;
+  }
+  header#default-header .dropdown-menu li {
+    transition: all 350ms ease-out;
+  }
+  header#default-header .dropdown-menu.show {
+    max-height: 500px;
+  }
+  header#default-header #basicExampleNav.show, header#default-header #basicExampleNav.collapsing {
+    top: 0;
+  }
+  header#default-header .collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 767.98px) {
+}
+@media (max-width: 575.98px) {
 }

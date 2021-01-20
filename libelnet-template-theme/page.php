@@ -2,13 +2,15 @@
 
 
 <main id="main-primary">
-    <section>
+    <section id="">
         <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <h1><?php the_title();?></h1>
 
-            <h1><?php the_title();?></h1>
-
-            <?php get_template_part('includes/section','content');?>
-
+                    <?php get_template_part('includes/section','content');?>
+                </div>
+            </div>
         </div>
     </section>
 </main>
