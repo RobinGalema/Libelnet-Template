@@ -18,11 +18,15 @@ This template uses variables to reference colors, fonts, animations etc. To chan
 
 
 // ----- COLORS -----
-// Main Colors - Used for coloring elements, buttons, outlines and backgrounds
-$colorA : rgb(84, 132, 236);
-$colorB : #281263;
-$colorC: #61c4ff;
-$colorD: #fff;
+// Main Colors
+$mainColorA: #3d5a80;
+$mainColorB: #ee6c4d;
+$mainColorC: #98c1d9;
+
+// Main Colors
+$accentColorA: #e0fbfc;
+$accentColorB: #293241;
+$accentColorC: #E7B4A5;
 
 // ----- FONTS -----
 $HeadingA: 'Montserrat',
@@ -77,10 +81,10 @@ p {
 a {
     font-family: $paragraph;
     font-weight: normal;
-    color: $colorA;
+    color: $mainColorB;
 
     &:hover{
-        color: darken($color: $colorA, $amount: 10%);
+        color: darken($color: $mainColorB, $amount: 10%);
     }
 }
 
@@ -158,6 +162,10 @@ header#default-header {
         }
     }
 
+    .navbar-nav li:hover > ul.dropdown-menu {
+        display: block;
+    }
+
     .icon-container {
         a {
             i {
@@ -223,10 +231,12 @@ M E D I A  Q U E R I E S
 */
 
 /*
-    For the website template, building the site desktopfirst/ responsive is the default. Therefor the mixins used will use "media-breakpoint-down". If a site is to be build with a specific mobile design or mobile first, start working here and change the mixin to "media-breakpoint-up".
+    Both responsive and mobile first media queries are given with Bootstrap values.
+    ! REMOVE THE TYPE OF MEDIA QUERY THAT IS NOG BEING USED !
 */
 
 
+// ====== RESPONSIVE (Remove if using mobile first queries) =======
 // XL and smaller
 @include media-breakpoint-down(xl) {
 
@@ -242,13 +252,19 @@ M E D I A  Q U E R I E S
     // HEADER
     header#default-header {
 
+        .navbar-toggler{
+            &:focus{
+                outline: none !important; // Remove outline when icon is clicked on chrome
+            }
+        }
+
         #basicExampleNav {
             position: fixed;
             display: block !important;
             width: 100vw;
             height: 100vh;
-            top: -110vh;
-            left: 0;
+            top: 0;
+            left: -110vw;
             background: darken($color: white, $amount: 3%);
             z-index: 100;
             transition: $standardOut;
@@ -286,12 +302,12 @@ M E D I A  Q U E R I E S
         }
 
         .dropdown-menu.show{
-            max-height: 500px;
+            max-height: 1000px;
         }
 
         #basicExampleNav.show,
         #basicExampleNav.collapsing {
-            top: 0;
+            left: 0;
         }
 
         .collapsing {
@@ -309,5 +325,84 @@ M E D I A  Q U E R I E S
 
 // XS and smaller
 @include media-breakpoint-down(xs) {
+
+}
+
+
+// ====== MOBILE FIRST (Remove if using repsonsive queries) =======
+// XS and up
+@include media-breakpoint-up(xs) {
+
+}
+
+// SM and up
+@include media-breakpoint-up(sm) {
+
+}
+
+// MD and up
+@include media-breakpoint-up(md) {
+    header#default-header {
+        height: 95px;
+        background: darken($color: white, $amount: 3%);
+    
+        a {
+            color: lighten($color: black, $amount: 25%);
+            font-weight: 500;
+            font-family: $HeadingA;
+    
+            &:hover{
+                color: lighten($color: black, $amount: 35%);
+            }
+        }
+    
+    
+        .container {
+            max-width: 1720px;
+            padding: 0 25px;
+            height: 100%;
+        }
+    
+        .branding-container {
+            img{
+                padding: 15px 0;
+                max-height: 100%;
+            }
+        }
+    
+        nav {
+            justify-content: flex-end;
+    
+            button {
+                padding-right: 0;
+                z-index: 10000;
+    
+                i {
+                    font-size: 30px;
+                    color: lighten($color: black, $amount: 25%);
+                }
+            }
+        }
+    
+        .icon-container {
+            a {
+                i {
+                    font-size: 30px;
+                    text-align: right;
+                    float: right;
+                }
+            }
+        }
+    }
+
+}
+
+// LG and up
+@include media-breakpoint-up(lg) {
+
+}
+
+// XL and up
+@include media-breakpoint-up(xl) {
 
 }

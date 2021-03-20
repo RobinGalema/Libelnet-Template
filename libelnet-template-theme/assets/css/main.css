@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap');
 /* IMPORTS
  ---------------------------------------------- */
 /*!
@@ -8,6 +6,8 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap');
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -3112,10 +3112,10 @@ p {
 a {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  color: #5484ec;
+  color: #ee6c4d;
 }
 a:hover {
-  color: #2663e7;
+  color: #ea461e;
 }
 li {
   font-family: 'Open Sans', sans-serif;
@@ -3171,6 +3171,9 @@ header#default-header nav button i {
   font-size: 30px;
   color: #404040;
 }
+header#default-header .navbar-nav li:hover > ul.dropdown-menu {
+  display: block;
+}
 header#default-header .icon-container a i {
   font-size: 30px;
   text-align: right;
@@ -3204,18 +3207,20 @@ header#default-header .icon-container a i {
  ####################################################
  */
 /*
- For the website template, building the site desktopfirst/ responsive is the default. Therefor the mixins used will use "media-breakpoint-down". If a site is to be build with a specific mobile design or mobile first, start working here and change the mixin to "media-breakpoint-up".
+ Both responsive and mobile first media queries are given with Bootstrap values.
+ ! REMOVE THE TYPE OF MEDIA QUERY THAT IS NOG BEING USED !
  */
-@media (max-width: 1199.98px) {
-}
 @media (max-width: 991.98px) {
+  header#default-header .navbar-toggler:focus {
+    outline: none !important;
+  }
   header#default-header #basicExampleNav {
     position: fixed;
     display: block !important;
     width: 100vw;
     height: 100vh;
-    top: -110vh;
-    left: 0;
+    top: 0;
+    left: -110vw;
     background: #f7f7f7;
     z-index: 100;
     transition: all 350ms ease-out;
@@ -3247,10 +3252,10 @@ header#default-header .icon-container a i {
     transition: all 350ms ease-out;
   }
   header#default-header .dropdown-menu.show {
-    max-height: 500px;
+    max-height: 1000px;
   }
   header#default-header #basicExampleNav.show, header#default-header #basicExampleNav.collapsing {
-    top: 0;
+    left: 0;
   }
   header#default-header .collapsing {
     -webkit-transition: none;
@@ -3258,7 +3263,42 @@ header#default-header .icon-container a i {
     display: none;
   }
 }
-@media (max-width: 767.98px) {
-}
-@media (max-width: 575.98px) {
+@media (min-width: 768px) {
+  header#default-header {
+    height: 95px;
+    background: #f7f7f7;
+  }
+  header#default-header a {
+    color: #404040;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+  }
+  header#default-header a:hover {
+    color: #595959;
+  }
+  header#default-header .container {
+    max-width: 1720px;
+    padding: 0 25px;
+    height: 100%;
+  }
+  header#default-header .branding-container img {
+    padding: 15px 0;
+    max-height: 100%;
+  }
+  header#default-header nav {
+    justify-content: flex-end;
+  }
+  header#default-header nav button {
+    padding-right: 0;
+    z-index: 10000;
+  }
+  header#default-header nav button i {
+    font-size: 30px;
+    color: #404040;
+  }
+  header#default-header .icon-container a i {
+    font-size: 30px;
+    text-align: right;
+    float: right;
+  }
 }

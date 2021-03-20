@@ -13,6 +13,11 @@ function load_css()
     array(), false, 'all');
     wp_enqueue_style('main.scss');
 
+    wp_register_style('aos', get_template_directory_uri() . '/assets/css/aos.css',
+    array(), false, 'all');
+    wp_enqueue_style('aos.css'); // <-- AOS CSS Files
+
+
     wp_register_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css',
         array(), false, 'all');
     wp_enqueue_style('bootstrap');
@@ -31,6 +36,10 @@ function load_js()
     wp_register_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js',
         'jquery', false, true);
     wp_enqueue_script('bootstrap');
+
+    wp_register_script('aos', get_template_directory_uri() . '/assets/js/aos.js',
+    'jquery', false, true);
+    wp_enqueue_script('aos'); // <-- AOS Library
 
     wp_register_script('custom', get_template_directory_uri() . '/assets/js/custom.js',
     'jquery', false, true);
