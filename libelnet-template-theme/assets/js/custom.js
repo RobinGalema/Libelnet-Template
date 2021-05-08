@@ -23,8 +23,9 @@ const toggleNavIcon = (element) => {
     let icon = jQuery(element).find('.fas');
 
     jQuery(icon).toggleClass('fa-bars');
-    jQuery(icon).toggleClass('fa-times')
-    
+    jQuery(icon).toggleClass('fa-times');
+
+    UpdateScrolling(element);  
 }
 
 /**
@@ -65,6 +66,26 @@ const SetupAnimatableObjects = (baseClass) => {
         return true; // Animatable objects found and attributes added
     } else {
         return false; // No Animatable objects found
+    }
+}
+
+/**
+ * Function that toggles a class on the body to prevent page scrolling whilst the mobile menu is opened
+ * @param {element} button The button that toggles the mobile menu
+ */
+const UpdateScrolling = (button) => {
+    console.log(button.getAttribute("aria-expanded"));
+    switch(button.getAttribute("aria-expanded")){
+
+        case ('true'): { // Remove class, scrolling is enabled
+            jQuery("body")[0].classList.remove("no-scroll");
+            break;
+        }
+        
+        case ('false'): { // Add class, scrolling is disabled
+            jQuery("body")[0].classList.add("no-scroll");
+            break;
+        }
     }
 }
 
