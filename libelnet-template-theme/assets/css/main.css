@@ -3159,6 +3159,20 @@ header#default-header .container {
   padding: 0 25px;
   height: 100%;
 }
+header#default-header li a {
+  color: #1a1a1a;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  display: inline-block;
+}
+header#default-header li:hover a.dropdown-toggle, header#default-header li:hover i {
+  color: #3d5a80;
+}
+header#default-header .dropdown-toggle::after {
+  display: none;
+  content: unset !important;
+}
 header#default-header .branding-container img {
   padding: 15px 0;
   max-height: 100%;
@@ -3181,6 +3195,29 @@ header#default-header .icon-container a i {
   font-size: 30px;
   text-align: right;
   float: right;
+}
+header#default-header .dropdown-menu {
+  text-align: center;
+  border: none;
+  border-radius: 0px;
+  background: #f4f4f4;
+  box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  margin: 0;
+}
+header#default-header .dropdown-menu li {
+  margin: 0;
+  padding: 10px 10px;
+  text-align: left;
+}
+header#default-header .dropdown-menu li:hover {
+  background: #f8f9fa;
+}
+header#default-header .dropdown-menu .dropdown-item:active {
+  background: none;
+}
+header#default-header .navbar-nav li:hover > ul.dropdown-menu {
+  display: block;
 }
 /* SHOWCASE/ LANDING-HERO
  Styling for a showcase or hero-section on the landing page goes here

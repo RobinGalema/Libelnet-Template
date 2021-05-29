@@ -185,8 +185,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
             $atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
             // If the item has children, add atts to the <a>.
             if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth > 1 ) {
-                $atts['href']          = '#';
-                $atts['data-toggle']   = 'dropdown';
+                $atts['href']          = ! empty( $item->url ) ? $item->url : '';
+                $atts['data-toggle']   = 'hover';
                 $atts['aria-haspopup'] = 'true';
                 $atts['aria-expanded'] = 'false';
                 $atts['class']         = 'dropdown-toggle nav-link';
@@ -282,7 +282,12 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
                 $item_output .= self::linkmod_element_close( $linkmod_type );
             } else {
                 // With no link mod type set this must be a standard <a> tag.
-                $item_output .= '</a>';
+                if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth > 1 ) {
+                    $item_output .= '</a> <i class="fas fa-chevron-down dropdown-toggle" data-toggle="dropdown"></i>';
+                }
+                else{
+                    $item_output .= '</a>';
+                }
             }
 
             $item_output .= isset( $args->after ) ? $args->after : '';

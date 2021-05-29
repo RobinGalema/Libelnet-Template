@@ -145,6 +145,30 @@ header#default-header {
         height: 100%;
     }
 
+    li{
+        a {
+            color: lighten($color: black, $amount: 10%);
+            font-weight: 500;
+            font-family: $HeadingA;
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        &:hover {
+
+            a.dropdown-toggle, i{
+                color: $mainColorA;
+            }
+        }
+    }
+
+    .dropdown-toggle{
+        &::after{
+            display: none;
+            content: unset !important;
+        }
+    }
+
     .branding-container {
         img{
             padding: 15px 0;
@@ -178,6 +202,36 @@ header#default-header {
                 float: right;
             }
         }
+    }
+
+    .dropdown-menu {
+        text-align: center;
+        border: none;
+        border-radius: 0px;
+        background: #f4f4f4;
+        box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.15);
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 0;
+            padding: 10px 10px;
+            text-align: left;
+
+            &:hover {
+                background: #f8f9fa;
+            }
+        }
+
+        .dropdown-item {
+            &:active {
+                background: none;
+            }
+        }
+    }
+
+    .navbar-nav li:hover>ul.dropdown-menu {
+        display: block;
     }
 }
 
